@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "boutiques",
+  "info": {
+    "singularName": "boutique",
+    "pluralName": "boutiques",
+    "displayName": "Boutique",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nom": {
+      "type": "string"
+    },
+    "quartier": {
+      "type": "string"
+    },
+    "localisation": {
+      "type": "string"
+    },
+    "contact1": {
+      "type": "string"
+    },
+    "contact2": {
+      "type": "biginteger"
+    },
+    "email": {
+      "type": "email"
+    },
+    "actif": {
+      "type": "boolean",
+      "default": true
+    },
+    "marchand": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "boutiques"
+    },
+    "articles": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::article.article",
+      "mappedBy": "boutique"
+    }
+  }
+}

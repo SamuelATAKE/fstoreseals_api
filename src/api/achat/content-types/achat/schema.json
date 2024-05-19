@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "achats",
+  "info": {
+    "singularName": "achat",
+    "pluralName": "achats",
+    "displayName": "Achat"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "effectue": {
+      "type": "boolean",
+      "default": false
+    },
+    "panier": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::panier.panier",
+      "inversedBy": "achat"
+    }
+  }
+}

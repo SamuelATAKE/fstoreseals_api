@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "paniers_articles",
+  "info": {
+    "singularName": "paniers-article",
+    "pluralName": "paniers-articles",
+    "displayName": "PaniersArticle"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "panier_article": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::panier-article.panier-article",
+      "inversedBy": "paniers_articles"
+    },
+    "panier": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::panier.panier",
+      "inversedBy": "paniers_articles"
+    }
+  }
+}
